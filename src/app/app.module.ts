@@ -9,12 +9,17 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component'; 
 
 import { RouterModule } from '@angular/router'; 
-import { ModuleWithProviders } from '@angular/core'; 
+import { ModuleWithProviders } from '@angular/core';
+import { HeaderComponent } from './shared/layout/header/header.component'; 
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'auth',
+    component: AuthComponent
   }
 ], {useHash: true});
 
@@ -22,7 +27,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([
   declarations: [
     AppComponent,
     AuthComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
