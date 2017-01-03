@@ -10,7 +10,9 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule } from '@angular/router'; 
 import { ModuleWithProviders } from '@angular/core';
-import { HeaderComponent } from './shared/layout/header/header.component'; 
+import { HeaderComponent } from './shared/layout/header/header.component';
+import { ProfileComponent } from './profile/profile/profile.component'; 
+import { UserService } from './shared/services/user.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([
   {
@@ -28,7 +30,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([
     AppComponent,
     AuthComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([
     HttpModule,
     rootRouting
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
