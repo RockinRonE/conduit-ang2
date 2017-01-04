@@ -36,8 +36,8 @@ export class UserService {
   }
 
   getUser() {
-    return this.http.get(`https://conduit.productionready.io/api/profiles/eric`)
-      .map((res:Response) => console.log(res.json())); 
+    return this.http.get(`https://conduit.productionready.io/api/profiles/UsernameRonny`)
+      .map((res:Response) => res.json()); 
   }
 
 }
