@@ -6,27 +6,27 @@
           <h5 class="text-center">Have an Account?</h5></div>
       <div class="col-md-4 col-md-offset-4">
 
-        <form (ngSubmit)="onSubmit()" #registerForm = "ngForm">
-          {{diagnostic}}
+        <form (ngSubmit)="onSubmit(register)" #register = "ngForm">
+          {{register.value | json}}
             <div class="form-group">
                 <label class="control-label">Username </label>
                 <input class="form-control" type="text"
                 required
-                [(ngModel)]="model.username" name="username">
-                {{model.username}}
+                [(ngModel)]="register.username" name="username">
+                {{username}}
             </div>
             <div class="form-group">
                 <label class="control-label">Email </label>
                 <input class="form-control" type="text"
                 required
-                [(ngModel)]="model.email" name="email">
+                [(ngModel)]="register.email" name="email">
             </div>
             <div class="form-group">
                 <label class="control-label">Password </label>
                 <input class="form-control" type="text" required
-                [(ngModel)]="model.password" name="password">
+                [(ngModel)]="register.password" name="password">
             </div>
-            <button class="btn btn-default" type="submit" [disabled]="!registerForm.form.valid">Sign Up</button>
+            <button class="btn btn-default" type="submit" [disabled]="!register.form.valid">Sign Up</button>
         </form>
 
       </div>

@@ -19,12 +19,17 @@ export class HomeComponent implements OnInit {
     this.userService.getUser().subscribe(data => this.profile = data);
   }
 
-  registerUser(username, email, password) {
-    this.userService.registerUser(username, email, password).subscribe(data => this.profile = data);
-  }
+  // registerUser(username, email, password) {
+  //   this.userService.registerUser(username, email, password).subscribe(data => this.profile = data);
+  // }
   
   ngOnInit() {
+
   }
+
+  // getUser() {
+  //   this.userService.getUser(); 
+  // }
 
 // get diagnostic() { return JSON.stringify(this.model)}
 }

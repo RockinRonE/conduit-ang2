@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserService } from '../shared/services/user.service';
+
 import { User } from '../shared/models/user.model'; 
 
 @Component({
@@ -8,7 +10,12 @@ import { User } from '../shared/models/user.model';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-   
+   user: User = {
+     username: '',
+     email: '',
+     password: ''
+   };
+  
 
   // model = new User('Ronny', 'ronny@gmail.com', 'password');
 
@@ -20,19 +27,19 @@ export class AuthComponent implements OnInit {
 
 
 
-  constructor(user: User) {
-
-    onSubmit(user.username, user.email, user.password) {
-      this.submitted = true; 
-
-      new user(this.username, this.email, this.password);
-    }
+  constructor(private userService: UserService) {
 
   }
+
+   onSubmit(register) {
+      let registerUser = new User(register.username, register.email, register.password);
+      this.userService.registerUser(registerUser); 
+      // this.userService.registerUser(registerUser); 
+    }
 
   ngOnInit() {
   }
 
-  get diagnostic() { return JSON.stringify(this.model); }
+
 
 }
