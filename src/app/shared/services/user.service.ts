@@ -11,22 +11,18 @@ export class UserService {
   constructor(private http: Http) { }
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  registerUser(user): Promise<any> {
+  registerUser(user) {
 
-    let username = user.username;
-    let password = 'password';
-    let email = 'ronny@gmail.com';
-    console.log(`this works!`);
+    // let username = user.username;
+    // let password = 'password';
+    // let email = 'ronny@gmail.com';
+    // console.log(`this works!`);
 
     return this.http
       .post(`https://conduit.productionready.io/api/users`, JSON.stringify({user: {username: user.username, email: user.email, password: user.password }}), {headers: this.headers})
-      .toPromise()
-      .then(() => console.log(user));
+      .map(res => res.json())
+      .subscribe(user => console.log(user) );
       
-      
-      
-      // .map((res:Response) => console.log(res.json())); 
-
 
 
 
