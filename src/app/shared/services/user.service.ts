@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { Http, Response, Headers } from '@angular/http'; 
 
+import { User } from '../models/user.model'; 
 
-import 'rxjs/add/operator/toPromise'; 
 import 'rxjs/add/operator/map'; 
 
+const apiRoute = 'https://conduit.productionready.io/api'; 
 @Injectable()
+
+
 export class UserService {
 
   constructor(private http: Http) { }
@@ -16,6 +20,14 @@ export class UserService {
       .post(`https://conduit.productionready.io/api/users`, JSON.stringify({user: {username: user.username, email: user.email, password: user.password }}), {headers: this.headers})
       .map(res => res.json())
       .subscribe(user => console.log(user) );
+  }
+
+  logIn(credentials): Observable<User> {
+    console.log(credentials);
+    return this.http.post('${apiRoute}/users/login', JSON.stringify({user: credentials}), {headers: this.headers})
+      .map(res => res.json())
+      .subscribe(data => console.log(data));
+      
   }
 
   getUser() {

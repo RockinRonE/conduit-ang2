@@ -23,6 +23,7 @@ export class AuthComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute
 
+
     ) {
     this.form = fb.group({
       // "username": ['', Validators.required],
@@ -33,7 +34,8 @@ export class AuthComponent implements OnInit {
   }
 
    onSubmit() {
-     console.log(this.form.value); 
+     this.userService.logIn(this.form.value); 
+     console.log('onSubmit works!');
 
     }
 
