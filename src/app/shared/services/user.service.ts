@@ -12,23 +12,10 @@ export class UserService {
   private headers = new Headers({'Content-Type': 'application/json'});
 
   registerUser(user) {
-
-    // let username = user.username;
-    // let password = 'password';
-    // let email = 'ronny@gmail.com';
-    // console.log(`this works!`);
-
     return this.http
       .post(`https://conduit.productionready.io/api/users`, JSON.stringify({user: {username: user.username, email: user.email, password: user.password }}), {headers: this.headers})
       .map(res => res.json())
       .subscribe(user => console.log(user) );
-      
-
-
-
-  //  return this.http.post(`https://conduit.productionready.io/api/users/?username=ronny&email=ronny@gmail.com&password=mypassword`, '')
-  //   .map((res:Response) => console.log(res.json())); 
-
   }
 
   getUser() {

@@ -18,23 +18,8 @@ export class HomeComponent implements OnInit {
   loadUser() {
     this.userService.getUser().subscribe(data => this.profile = data);
   }
-
-  // registerUser(username, email, password) {
-  //   this.userService.registerUser(username, email, password).subscribe(data => this.profile = data);
-  // }
   
   ngOnInit() {
 
   }
-
-  // getUser() {
-  //   this.userService.getUser(); 
-  // }
-
-// get diagnostic() { return JSON.stringify(this.model)}
 }
-// /Users/ronnyewanek/Desktop/conduit-app/src/app/shared/services/user.service.
-
-
-
-// /Users/ronnyewanek/Desktop/conduit-app/src/app/home/home.component.ts
