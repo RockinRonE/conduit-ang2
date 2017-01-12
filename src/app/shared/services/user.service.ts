@@ -34,11 +34,13 @@ export class UserService {
   logIn(credentials): Observable<User> {
     console.log(credentials);
 
-    return this.http.post(`${apiRoute}/users/login`, JSON.stringify({user: credentials}), {headers: this.headers})
-      .map(data => {
-        this.setUser(data.user);
+     return this.http.post(`${apiRoute}/users/login`, JSON.stringify({user: credentials}), {headers: this.headers})
+      .map((res:Response) => {
+        let result = res.json();
+        this.setUser(result.user);
+        return result.user;
         // return data; 
-      }
+      })
       
   }
 

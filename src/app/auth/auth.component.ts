@@ -50,7 +50,7 @@ export class AuthComponent implements OnInit {
     // console.log(this);
     this.route.url.subscribe(data => {
       // Get the last piece of the URL. URL segment is an array so...
-      // this.authType = data[data.length - 1].path; 
+      this.authType = data[data.length - 1].path; 
 
       // set page title
       this.title = (this.authType === 'signin') ? 'Sign In' : 'Register';
