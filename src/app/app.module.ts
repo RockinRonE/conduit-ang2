@@ -13,6 +13,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { ProfileComponent } from './profile/profile/profile.component'; 
 import { UserService } from './shared/services/user.service';
+import { JwtService } from './shared/services/jwt.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([
   // {
@@ -48,7 +49,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([
     HttpModule,
     rootRouting
   ],
-  providers: [UserService],
+  providers: [UserService, JwtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

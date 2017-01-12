@@ -1,11 +1,10 @@
 
 
 export class User {
-
-    constructor(
-        public username: string,
-        public email: string,
-        public password: any
-    ) { }
-
+         username: string;
+         email: string;
+        //  password: any
+        token: string; 
+        bio: string;
+        image: string;
 }
