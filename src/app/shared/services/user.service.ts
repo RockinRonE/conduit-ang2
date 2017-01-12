@@ -22,7 +22,7 @@ export class UserService {
       .subscribe(user => console.log(user) );
   }
 
-  logIn(credentials): Observable<User> {
+  logIn(credentials) {
     console.log(credentials);
     return this.http.post('${apiRoute}/users/login', JSON.stringify({user: credentials}), {headers: this.headers})
       .map(res => res.json())

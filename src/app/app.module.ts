@@ -15,10 +15,11 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { UserService } from './shared/services/user.service';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([
-  {
-    path: '',
-    component: HomeComponent
-  },
+  // {
+  //   path: '',
+  //   component: HomeComponent
+  // },
+  
   {
     path: 'signin',
     component: AuthComponent
@@ -26,6 +27,10 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([
   {
     path: 'register',
     component: AuthComponent
+  },
+  {
+    path: '',
+    component: HomeComponent
   }
 ], {useHash: true});
 

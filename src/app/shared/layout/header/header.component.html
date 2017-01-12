@@ -5,16 +5,19 @@
     </div>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active" role="presentation"><a href="#">Home </a></li>
+
+        <li class="active" role="presentation">
+          <a routerLink="/"> Home </a>
+        </li>
 
         <li role="presentation">
-          <a [routerLink]="['signin']" routerLinkActive="active-link">
+          <a routerLink="signin" routerLinkActive="active-link">
             Sign In
           </a>
         </li>
 
         <li role="presentation">
-          <a [routerLink]="['register']" routerLinkActive="active-link">
+          <a routerLink="register" routerLinkActive="active-link">
             Sign Up
           </a>
         </li>
