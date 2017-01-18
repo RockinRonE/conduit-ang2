@@ -10,7 +10,7 @@
 
       <div class="col-md-4 col-md-offset-4">
 
-        <form (ngSubmit)="onSubmit()" [formGroup] = "form">
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
         
             <div class="form-group" *ngIf="authType == 'register'">
                 <label class="control-label">Username </label>

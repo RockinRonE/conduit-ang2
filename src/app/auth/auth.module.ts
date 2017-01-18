@@ -1,7 +1,13 @@
 import { ModuleWithProviders, NgModule } from '@angular/core'; 
 import { RouterModule } from '@angular/router'; 
+import { CommonModule } from '@angular/common';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AuthComponent } from './auth.component'; 
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 const authRouting: ModuleWithProviders = RouterModule.forChild([
     {
@@ -16,8 +22,19 @@ const authRouting: ModuleWithProviders = RouterModule.forChild([
 ]);
 
 @NgModule({
-    imports: [authRouting],
-    declarations: [AuthComponent]
+    imports: [
+        authRouting,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    declarations: [
+        AuthComponent
+        ],
+    // exports: [
+        // CommonModule,
+        // FormsModule
+    // ]
 
 })
 

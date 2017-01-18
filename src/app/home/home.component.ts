@@ -12,11 +12,15 @@ export class HomeComponent implements OnInit {
 
    
 
-  constructor(private userService: UserService) { }
-  profile = {};
+  constructor(
+     private userService: UserService
+  ) { }
+
+
+  profile = '';
 
   loadUser() {
-    this.userService.getUser().subscribe(data => this.profile = data);
+    this.userService.getUser().subscribe(data => this.profile = JSON.stringify(data));
   }
   
   ngOnInit() {

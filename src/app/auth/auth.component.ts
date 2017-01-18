@@ -12,6 +12,7 @@ import { UserService } from '../shared/services/user.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
+
 export class AuthComponent implements OnInit {
    form: FormGroup; 
    authType: String = ''; 
@@ -25,12 +26,11 @@ export class AuthComponent implements OnInit {
 
 
     ) {
-    this.form = fb.group({
+    this.form = this.fb.group({
       // "username": ['', Validators.required],
       "email": ['', Validators.required],
       "password": ['', Validators.required]
-    })
-
+    });
   }
 
    onSubmit() {
