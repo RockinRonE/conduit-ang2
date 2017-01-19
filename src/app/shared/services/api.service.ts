@@ -37,6 +37,7 @@ export class ApiService{
 
     get(path: string, body: Object = {}, params: URLSearchParams = new URLSearchParams()): Observable<any> {
         return this.http.get(`${api_url}${path}`, { headers: this.setHeaders(), search: params})
-            .catch(this.formatErrors);
+            .catch(this.formatErrors)
+            .map( (res:Response) => res.json()); 
     }
 }

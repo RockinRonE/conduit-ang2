@@ -56,4 +56,9 @@ export class UserService {
       .map((res:Response) => res.json()); 
   }
 
+  attemptAuth(type, credentials): Observable<User> {
+    let route = (type === 'sigin') ? '/login' : '';
+    
+  }
+
 }

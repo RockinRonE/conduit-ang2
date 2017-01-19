@@ -35,6 +35,7 @@ export class AuthComponent implements OnInit {
   }
 
    onSubmit() {
+     let credentials = this.form.value; 
      this.userService
       .logIn(this.form.value)
       .subscribe(
