@@ -8,21 +8,25 @@ import { AuthModule } from './auth/auth.module';
 
 // App Root 
 import { AppComponent } from './app.component';
-import { UserService } from './shared/services/user.service';
+// import { UserService } from './shared/services/user.service';
+import { ArticleService } from './shared/services/article.service';
 
 
 
-
-import { HttpModule } from '@angular/http';
-
+// import { HttpModule } from '@angular/http';
 
 
-import { HeaderComponent } from './shared/layout/header/header.component';
+
+// import { HeaderComponent } from './shared/layout/header/header.component';
 import { ProfileComponent } from './profile/profile/profile.component'; 
-import { JwtService } from './shared/services/jwt.service';
+// import { JwtService } from './shared/services/jwt.service';
+// import { ArticlePreviewComponent } from './shared/article/article-preview.component';
 
-
-
+import {
+  HeaderComponent,
+  UserService,
+  JwtService
+} from './shared'; 
 
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true});
@@ -31,16 +35,21 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProfileComponent
+    ProfileComponent,
+    // ArticlePreviewComponent
   ],
   imports: [
     BrowserModule,
     AuthModule,
     HomeModule, 
-    HttpModule,
+    // HttpModule,
     rootRouting,
   ],
-  providers: [UserService, JwtService],
+  providers: [
+    UserService, 
+    JwtService,
+    ArticleService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

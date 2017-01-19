@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component'; 
 
+import { HttpModule } from '@angular/http';
+
 const homeRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: '',
@@ -12,7 +14,8 @@ const homeRouting: ModuleWithProviders = RouterModule.forChild([
 
 @NgModule({
     imports: [
-        homeRouting
+        homeRouting,
+        HttpModule
     ], 
     declarations: [
         HomeComponent

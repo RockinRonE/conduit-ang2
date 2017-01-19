@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AuthComponent } from './auth.component'; 
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 const authRouting: ModuleWithProviders = RouterModule.forChild([
@@ -31,11 +31,6 @@ const authRouting: ModuleWithProviders = RouterModule.forChild([
     declarations: [
         AuthComponent
         ],
-    // exports: [
-        // CommonModule,
-        // FormsModule
-    // ]
-
 })
 
 export class AuthModule {}
